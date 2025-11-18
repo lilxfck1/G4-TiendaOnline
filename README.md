@@ -1,1 +1,4 @@
 # G4-TiendaOnline
+El proyecto implica crear una tienda online básica utilizando HTML y CSS, gestionando el desarrollo de manera colaborativa a través de GitHub.
+Un integrante configurará un repositorio público llamado Gx-TiendaOnline, añadirá a los compañeros y creará una estructura básica de archivos (index.html, contacto.html, styles.css, images/). El desarrollo se centrará en crear una página de inicio con un catálogo de al menos 5 productos y un carrito de compras funcional, además de una página de contacto.
+La gestión del proyecto se realizará mediante un tablero Kanban en GitHub Projects con columnas "To Do", "In Progress" y "Done". Las tareas se dividirán en issues, se asignarán a los miembros del grupo y se trabajarán colaborativamente. El proyecto finaliza cuando todas las tareas estén completas, revisadas mutuamente y el código esté subido a GitHub con un README.md actualizado.
