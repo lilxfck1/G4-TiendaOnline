@@ -50,15 +50,3 @@ La coordinación y el seguimiento se realizan utilizando las herramientas nativa
   * **Tareas:** Todas las funcionalidades y correcciones se gestionan mediante **Issues** independientes, asignadas a un miembro específico del equipo.
   * **Flujo de Trabajo:** Las ramas de trabajo se utilizan para desarrollar las *issues*, y las **Pull Requests (PRs)** son obligatorias para integrar el código, asegurando una **revisión mutua** antes del *merge*.
 
------
-
-## ✅ Criterios de Finalización
-
-El proyecto se considera finalizado y listo para la entrega cuando se cumplan los siguientes puntos:
-
-1.  Todas las tareas del tablero **Kanban** están en la columna **"Done"**.
-2.  El código ha sido **revisado y validado** por al menos un compañero (*peer review*).
-3.  El código final está **subido y fusionado** (*merged*) en la rama principal (`main`/`master`).
-4.  El archivo **`README.md`** está completamente **actualizado** con la información final del proyecto.
-
-¿Te gustaría que te ayudara a redactar un modelo de "Issue" o una política de colaboración para tu equipo?
