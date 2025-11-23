@@ -1,5 +1,3 @@
-¡Claro\! Aquí tienes una versión más **atractiva**, **estructurada** y **profesional** del `README` para tu proyecto de tienda en línea.
-
 # 🛍️ G4-TiendaOnline: Una Experiencia de Compra Digital
 
 Un proyecto colaborativo para construir una **tienda online básica y responsive** utilizando **HTML y CSS** puros. La gestión del desarrollo se realiza de forma ágil y transparente a través de **GitHub**.
