@@ -1,172 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Tecnología</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos específicos para el catálogo y el carrito (sin @media) */
-        .hero {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin: 20px 0;
-            flex-wrap: wrap; /* permite que el contenido se acomode en pantallas pequeñas sin @media */
-        }
-        .hero img {
-            flex: 1 1 320px;
-            max-width: 50%;
-            border-radius: 6px;
-            object-fit: cover;
-            height: 240px;
-        }
-        .hero > div {
-            flex: 1 1 280px;
-            min-width: 220px;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tienda de Tecnología</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Estilos específicos para el catálogo y el carrito (sin @media) */
+            .hero {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin: 20px 0;
+                flex-wrap: wrap; /* permite que el contenido se acomode en pantallas pequeñas sin @media */
+            }
+            .hero img {
+                flex: 1 1 320px;
+                max-width: 50%;
+                border-radius: 6px;
+                object-fit: cover;
+                height: 240px;
+            }
+            .hero > div {
+                flex: 1 1 280px;
+                min-width: 220px;
+            }
 
-        .catalog {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 18px;
-        }
-        .product-card {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .product-card img {
-            height: 160px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .price {
-            font-weight: bold;
-            color: #0b6bdb;
-        }
+            .catalog {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 18px;
+            }
+            .product-card {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .product-card img {
+                height: 160px;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+            .price {
+                font-weight: bold;
+                color: #0b6bdb;
+            }
 
-        /* Carrito fijo y adaptativo sin @media */
-        .cart {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            width: min(320px, 90vw);
-            max-height: 80vh;
-            overflow-y: auto;
-            z-index: 100;
-        }
-        .cart h3 {
-            margin-top: 0;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-            border-bottom: 1px dashed #ddd;
-        }
-        .cart-item .meta {
-            flex: 1;
-        }
-        .cart-footer {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
+            /* Carrito fijo y adaptativo sin @media */
+            .cart {
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                width: min(320px, 90vw);
+                max-height: 80vh;
+                overflow-y: auto;
+                z-index: 100;
+            }
+            .cart h3 {
+                margin-top: 0;
+            }
+            .cart-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                padding: 8px 0;
+                border-bottom: 1px dashed #ddd;
+            }
+            .cart-item .meta {
+                flex: 1;
+            }
+            .cart-footer {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
 
-        /* pequeños ajustes para que todo sea fluido en pantallas angostas */
-        .container { padding-bottom: 120px; } /* espacio para carrito fijo en móviles */
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="card">
-            <div>
-                <h1>Tienda de Tecnología</h1>
-                <p>Los mejores dispositivos y accesorios para tu vida digital.</p>
-            </div>
-            <nav class="nav" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </header>
-
-        <section class="hero card">
-            <img src="https://picsum.photos/seed/tech/1200/600" alt="Portada de productos tecnológicos">
-            <div>
-                <h2>Bienvenido a la tienda</h2>
-                <p>Encuentra laptops, auriculares, teclados y más con las mejores ofertas y envío rápido.</p>
-                <a href="#catalogo" class="btn">Ver catálogo</a>
-            </div>
-        </section>
-
-        <section id="catalogo" class="card">
-            <h2>Catálogo de productos</h2>
-            <div class="catalog" id="products">
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p1/400/300" alt="Laptop Ultraligera X1">
-                    <h3>Laptop Ultraligera X1</h3>
-                    <p class="price">$799.99</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
+            /* pequeños ajustes para que todo sea fluido en pantallas angostas */
+            .container {
+                padding-bottom: 120px;
+            } /* espacio para carrito fijo en móviles */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="card">
+                <div>
+                    <h1>Tienda de Tecnología</h1>
+                    <p>
+                        Los mejores dispositivos y accesorios para tu vida
+                        digital.
+                    </p>
                 </div>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </header>
 
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p2/400/300" alt="Auriculares Wireless Pro">
-                    <h3>Auriculares Wireless Pro</h3>
-                    <p class="price">$129.50</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
+            <section class="hero card">
+                <img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhardzone.es%2Fapp%2Fuploads-hardzone.es%2F2022%2F09%2Ftienda-hardware-pc-estanterias.jpg&f=1&nofb=1&ipt=e9ea411a7c8b13ff46646b207b0baad12db813f9f65fc545d8fb67b980a9683f"
+                    alt="Portada de productos tecnológicos"
+                />
+                <div>
+                    <h2>Bienvenido a la tienda</h2>
+                    <p>
+                        Encuentra laptops, auriculares, teclados y más con las
+                        mejores ofertas y envío rápido.
+                    </p>
+                    <a href="#catalogo" class="btn">Ver catálogo</a>
                 </div>
+            </section>
 
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p3/400/300" alt="Teclado Mecánico RGB">
-                    <h3>Teclado Mecánico RGB</h3>
-                    <p class="price">$89.00</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
+            <section id="catalogo" class="card">
+                <h2>Catálogo de productos</h2>
+                <div class="catalog" id="products">
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flaptopmedia.com%2Fwp-content%2Fuploads%2F2022%2F07%2F3-1.jpg&f=1&nofb=1&ipt=b4b8129b41b15ce329315e2a901675f27c690ae31fcce05a1146dbac7d0dd833"
+                            alt="Laptop Ultraligera X1"
+                        />
+                        <h3>Laptop Ultraligera X1</h3>
+                        <p class="price">$799.99</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
+
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmicroless.com%2Fcdn%2Fproducts%2F5cd064129b8c53cfbfe761c5d67f7b47-hi.jpg&f=1&nofb=1&ipt=b771dc1a1d57581c8b46b6dbde06eb464b01d8e7538c937f45a40b2b5c2cb380"
+                            alt="Auriculares Wireless Pro"
+                        />
+                        <h3>Auriculares Wireless Pro</h3>
+                        <p class="price">$129.50</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
+
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.computerhoy.com%2Fsites%2Fnavi.axelspringer.es%2Fpublic%2Fmedia%2Fimage%2F2020%2F04%2Fteclado-mecanico-gaming-tecknet-1921381.jpg%3Ftf%3D2048x&f=1&nofb=1&ipt=c8d356b47d289d01743bde63da119004fa573692227b2e9ff8084f78463ae35e"
+                            alt="Teclado Mecánico RGB"
+                        />
+                        <h3>Teclado Mecánico RGB</h3>
+                        <p class="price">$89.00</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
+
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71qtyAxXdiL.jpg&f=1&nofb=1&ipt=5158d0d76dbc88a201ce2d57dfcafd1e84e8df1dfd89b09b99a9ea0af9fb0679"
+                            alt="Monitor 27 4K"
+                        />
+                        <h3>Monitor 27&quot; 4K</h3>
+                        <p class="price">$379.99</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
+
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ocu.org%2F-%2Fmedia%2Focu%2Fimages%2Fhome%2Ftecnologia%2Fordenador%2Fcomo-elegir-raton%2Fcomo-elegir-raton-trackball.jpg%3Fla%3Des-es%26rev%3D4ac6a3ae-1541-40a8-a471-2a9668a3a5aa%26h%3D200%26w%3D200%26hash%3DDA330BA6B865EB3B6B8DFDDE99921BC6%26mw%3D960&f=1&nofb=1&ipt=03fd82337fd34b6fcf33992ca073e2a43269a5bb27271580741c97ada9423c96"
+                            alt="Mouse Ergonomico Plus"
+                        />
+                        <h3>Mouse Ergonomico Plus</h3>
+                        <p class="price">$45.25</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
+
+                    <div class="card product-card">
+                        <img
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2Fab8258da-0de7-40c3-b999-e084b0cecab9.a0d1fae5fb17c5670772717d85e63ba3.jpeg&f=1&nofb=1&ipt=1a5b28ff0eabc96ba07db3f6eb2df59b13b5b198319187b99937f492a669261e"
+                            alt="Cargador Rapido 65W"
+                        />
+                        <h3>Cargador Rapido 65W</h3>
+                        <p class="price">$29.99</p>
+                        <button class="btn" disabled>Agregar al carrito</button>
+                    </div>
                 </div>
+            </section>
 
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p4/400/300" alt="Monitor 27 4K">
-                    <h3>Monitor 27&quot; 4K</h3>
-                    <p class="price">$379.99</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
+            <!-- Carrito visible (estático) -->
+            <aside class="card cart" id="cart">
+                <h3>Carrito</h3>
+                <div id="cart-items">
+                    <p>No hay productos en el carrito.</p>
                 </div>
-
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p5/400/300" alt="Mouse Ergonomico Plus">
-                    <h3>Mouse Ergonomico Plus</h3>
-                    <p class="price">$45.25</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
+                <div class="cart-footer">
+                    <strong>Total: <span id="cart-total">$0.00</span></strong>
+                    <button id="clear-cart" class="btn" disabled>Vaciar</button>
                 </div>
+            </aside>
+        </div>
 
-                <div class="card product-card">
-                    <img src="https://picsum.photos/seed/p6/400/300" alt="Cargador Rapido 65W">
-                    <h3>Cargador Rapido 65W</h3>
-                    <p class="price">$29.99</p>
-                    <button class="btn" disabled>Agregar al carrito</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Carrito visible (estático) -->
-        <aside class="card cart" id="cart">
-            <h3>Carrito</h3>
-            <div id="cart-items">
-                <p>No hay productos en el carrito.</p>
-            </div>
-            <div class="cart-footer">
-                <strong>Total: <span id="cart-total">$0.00</span></strong>
-                <button id="clear-cart" class="btn" disabled>Vaciar</button>
-            </div>
-        </aside>
-    </div>
-
-    <!-- se conserva JS por si quieres reactivar luego; no obligatorio -->
-    <script>
-        // Sin funcionalidad JS necesaria en esta versión simple.
-    </script>
-</body>
+        <!-- se conserva JS por si quieres reactivar luego; no obligatorio -->
+        <script>
+            // Sin funcionalidad JS necesaria en esta versión simple.
+        </script>
+    </body>
 </html>
