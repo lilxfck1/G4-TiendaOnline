@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto - Tienda de Tecnología</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* estilo mínimo sin @media */
+    .contact-grid { display: grid; grid-template-columns: 1fr 320px; gap: 18px; align-items: start; }
+    .map { background:#f0f0f0; height:180px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#666; }
+    form.card { padding:12px; }
+    label { display:block; margin-top:8px; font-weight:600; }
+    .muted { color:#666; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="card">
+      <div>
+        <h1>Contacto — Tienda de Tecnología</h1>
+        <p class="muted">¿Dudas o consultas? Escríbenos o visítanos.</p>
+      </div>
+      <nav class="nav" aria-label="Navegación">
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="card contact-grid">
+      <section>
+        <h2>Información</h2>
+        <p><strong>Dirección:</strong> Av. Tecnológica 123, Piso 4, Ciudad Digital</p>
+        <p><strong>Teléfono:</strong> <a href="tel:+59171234567">+591 7 123 4567</a></p>
+        <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
+
+        <h3>Ubicación</h3>
+        <div class="map">Mapa (placeholder)</div>
+      </section>
+
+      <aside>
+        <h2>Envíanos un mensaje</h2>
+
+        <form action="#" method="post" class="card" novalidate>
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required>
+
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+
+          <div style="display:flex;gap:10px;margin-top:8px;justify-content:flex-end">
+            <a href="index.html" class="btn" style="background:#6c6c6c;text-decoration:none;padding:8px 12px;display:inline-block">Volver</a>
+            <button type="submit" class="btn">Enviar</button>
+          </div>
+
+          <p class="muted" style="margin-top:8px;">Formulario estático (sin procesamiento).</p>
+        </form>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tecnología</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para el catálogo y el carrito (sin @media) */
+        .hero {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 20px 0;
+            flex-wrap: wrap; /* permite que el contenido se acomode en pantallas pequeñas sin @media */
+        }
+        .hero img {
+            flex: 1 1 320px;
+            max-width: 50%;
+            border-radius: 6px;
+            object-fit: cover;
+            height: 240px;
+        }
+        .hero > div {
+            flex: 1 1 280px;
+            min-width: 220px;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .product-card img {
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .price {
+            font-weight: bold;
+            color: #0b6bdb;
+        }
+
+        /* Carrito fijo y adaptativo sin @media */
+        .cart {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: min(320px, 90vw);
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        .cart h3 {
+            margin-top: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        .cart-item .meta {
+            flex: 1;
+        }
+        .cart-footer {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* pequeños ajustes para que todo sea fluido en pantallas angostas */
+        .container { padding-bottom: 120px; } /* espacio para carrito fijo en móviles */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="card">
+            <div>
+                <h1>Tienda de Tecnología</h1>
+                <p>Los mejores dispositivos y accesorios para tu vida digital.</p>
+            </div>
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </header>
+
+        <section class="hero card">
+            <img src="https://picsum.photos/seed/tech/1200/600" alt="Portada de productos tecnológicos">
+            <div>
+                <h2>Bienvenido a la tienda</h2>
+                <p>Encuentra laptops, auriculares, teclados y más con las mejores ofertas y envío rápido.</p>
+                <a href="#catalogo" class="btn">Ver catálogo</a>
+            </div>
+        </section>
+
+        <section id="catalogo" class="card">
+            <h2>Catálogo de productos</h2>
+            <div class="catalog" id="products">
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p1/400/300" alt="Laptop Ultraligera X1">
+                    <h3>Laptop Ultraligera X1</h3>
+                    <p class="price">$799.99</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p2/400/300" alt="Auriculares Wireless Pro">
+                    <h3>Auriculares Wireless Pro</h3>
+                    <p class="price">$129.50</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p3/400/300" alt="Teclado Mecánico RGB">
+                    <h3>Teclado Mecánico RGB</h3>
+                    <p class="price">$89.00</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p4/400/300" alt="Monitor 27 4K">
+                    <h3>Monitor 27&quot; 4K</h3>
+                    <p class="price">$379.99</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p5/400/300" alt="Mouse Ergonomico Plus">
+                    <h3>Mouse Ergonomico Plus</h3>
+                    <p class="price">$45.25</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+
+                <div class="card product-card">
+                    <img src="https://picsum.photos/seed/p6/400/300" alt="Cargador Rapido 65W">
+                    <h3>Cargador Rapido 65W</h3>
+                    <p class="price">$29.99</p>
+                    <button class="btn" disabled>Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrito visible (estático) -->
+        <aside class="card cart" id="cart">
+            <h3>Carrito</h3>
+            <div id="cart-items">
+                <p>No hay productos en el carrito.</p>
+            </div>
+            <div class="cart-footer">
+                <strong>Total: <span id="cart-total">$0.00</span></strong>
+                <button id="clear-cart" class="btn" disabled>Vaciar</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- se conserva JS por si quieres reactivar luego; no obligatorio -->
+    <script>
+        // Sin funcionalidad JS necesaria en esta versión simple.
+    </script>
+</body>
+</html>
